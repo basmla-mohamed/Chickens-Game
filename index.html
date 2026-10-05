@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--Meta-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Basmala Mohamed" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>Drop Egg Game</title>
+
+    <!--Style-->
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/plugins/headAnimations.css" />
+    <link rel="stylesheet" href="css/animationPlugins.css" />
+    <link rel="stylesheet" href="css/plugins/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/plugins/owl.theme.default.css" />
+    <link rel="stylesheet" href="css/keyframes.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index.responsive.css" />
+    <link rel="icon" id="favicon" href="./images/hen-right.png" />
+
+    <!--Script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="js/plugins/headAnimations.js" defer></script>
+    <script src="./js/plugins/owl.carousel.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js " defer></script>
+    <script src="js/wow.js " defer></script>
+    <script src="js/sweetAlert " defer></script>
+    <script src="js/functions.js " defer></script>
+    <script src="js/index.js " defer></script>
+    <script src="js/notes.js " defer></script>
+  </head>
+
+  <body>
+    <div id="game" class="pre-game">
+      <!--navBar-->
+      <nav class="navbar game-navbar py-2">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./images/hen-right.png" class="img-fluid" />
+            <div class="brand-info">
+              <h4>Egg Drop!</h4>
+              <span>Catch the eggs</span>
+            </div>
+          </a>
+
+          <div class="game-records">
+            <div class="cardOfRecords p-2 py-lg-2 px-lg-3 score-card">
+              <div class="icon">
+                <i class="fa-solid fa-egg"></i>
+              </div>
+              <div class="score-info">
+                <span>SCORE</span>
+                <h5 class="score">0</h5>
+              </div>
+            </div>
+
+            <div class="cardOfRecords p-2 py-lg-2 px-lg-3 best-card">
+              <div class="icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div class="bestScore">
+                <span>BEST</span>
+                <h5 id="heighstScore">0</h5>
+              </div>
+            </div>
+
+            <div class="cardOfRecords p-2 py-lg-2 px-lg-3 lives-card">
+              <div class="lives-info">
+                <span>YOUR LIVES</span>
+                <div id="lives">
+                  <i class="fa-solid fa-heart life"></i>
+                  <i class="fa-solid fa-heart life"></i>
+                  <i class="fa-solid fa-heart life"></i>
+                  <i class="fa-solid fa-heart life"></i>
+                  <i class="fa-solid fa-heart life"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-controls">
+            <button class="control-btn rounded-3 sound-btn" id="soundBtn">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+
+            <button class="control-btn rounded-3 pause-btn" id="pauseBtn">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+
+            <button class="control-btn rounded-3 restart-btn" id="restartBtn">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!--counter before playing-->
+      <div id="counter"></div>
+
+      <!--new record-->
+      <div id="newRecord"><i class="fa-solid fa-trophy"></i> New Record!</div>
+
+      <!--lost game-->
+      <div id="lostGame">
+        <div class="lost-card">
+          <img class="img-fluid" src="./images/hen-right.png" />
+          <h3>GAME OVER</h3>
+          <button id="tryAgain"><i class="fa-solid fa-rotate-right"></i> Try Again !</button>
+        </div>
+      </div>
+
+      <!--continue game or restart-->
+      <div id="continuePlaying">
+        <div class="pause-card">
+          <div class="pause-icon"><i class="fa-solid fa-pause"></i></div>
+          <h2 class="pause-title">Game Paused</h2>
+          <p class="pause-text">continue playing now</p>
+          <div class="pauseOrRestart">
+            <button id="resumeGame" class="btn-pause btn-resume btn btn-success"><i class="fa-solid fa-play"></i> Continue</button>
+            <button id="restartGame" class="btn-pause btn-restart"><i class="fa-solid fa-rotate-right"></i> Restart</button>
+          </div>
+        </div>
+      </div>
+
+      <!--sun on background of game-->
+      <div class="sun"></div>
+
+      <!--chickens-->
+      <div id="chickensContainer">
+        <div class="chicken first">
+          <i class="fa-solid fa-egg egg"></i>
+          <img class="img-fluid" src="./images/hen-right.png" />
+        </div>
+        <div class="chicken secound">
+          <i class="fa-solid fa-egg egg"></i>
+          <img class="img-fluid" src="./images/hen-right.png" />
+        </div>
+        <div class="chicken third">
+          <i class="fa-solid fa-egg egg"></i>
+          <img class="img-fluid" src="./images/hen-right.png" />
+        </div>
+      </div>
+
+      <!--startGame-->
+      <div id="startGame" class="text-center w-100 text-light">
+        <h4>Start Game</h4>
+
+        <p class="cd-headline clip">
+          <span></span>
+
+          <span class="cd-words-wrapper">
+            <b class="is-visible">
+              <i class="fa-solid fa-computer-mouse"></i>
+              Use your mouse to move
+            </b>
+
+            <b>
+              <i class="fa-solid fa-egg"></i>
+              Catch the falling eggs !
+            </b>
+
+            <b>
+              <i class="fa-solid fa-arrows-left-right"></i>
+              Move left & right
+            </b>
+
+            <b>
+              <i class="fa-solid fa-basket-shopping"></i>
+              Control your basket
+            </b>
+
+            <b>
+              <i class="fa-solid fa-play"></i>
+              Ready? Let's play!
+            </b>
+          </span>
+        </p>
+      </div>
+
+      <!--basket-->
+      <div id="basket">
+        <span class="score">0</span>
+        <img class="img-fluid" src="./images/basket2.png" />
+      </div>
+
+      <!--chickens-->
+      <div id="brokenEggs">
+        <div class="brokenEgg first">
+          <img class="img-fluid broken" src="./images/brokenEgg.png" />
+        </div>
+        <div class="brokenEgg secound">
+          <img class="img-fluid broken" src="./images/brokenEgg.png" />
+        </div>
+        <div class="brokenEgg third">
+          <img class="img-fluid broken" src="./images/brokenEgg.png" />
+        </div>
+      </div>
+
+      <!--footer-->
+      <footer>
+        <img src="./images/Easter-Eggs.png" alt="" class="img-fluid" />
+      </footer>
+    </div>
+
+    <!--loading page-->
+    <div id="loadingPage">
+      <div class="sun"></div>
+
+      <div class="loading-content">
+        <div class="loading-circle"></div>
+
+        <div class="egg egg-one">
+          <i class="fa-solid fa-egg"></i>
+        </div>
+
+        <div class="egg egg-two">
+          <i class="fa-solid fa-egg"></i>
+        </div>
+
+        <img src="./images/hen-right.png" alt="" class="img-fluid" />
+      </div>
+
+      <div class="loading-info">
+        <p>Getting Start<span class="dots"></span></p>
+
+        <div class="loadingLine">
+          <span></span>
+        </div>
+
+        <span class="prepare">Preparing your Game...</span>
+      </div>
+    </div>
+  </body>
+</html>

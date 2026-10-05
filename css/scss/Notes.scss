@@ -1,0 +1,99 @@
+/*session 27*/
+/*
+1- index.scss that file will read by index.css 
+
+2- we connect all sass files(secondary files) to _shares.scss(secondary file) and after that we connect 
+all that secondary file to our main file(index.scss) that will reads by index.css
+
+3-any secondary file must start by underScore( _ )
+
+4-all files of scss must contact to index.scss
+
+5-width: fit-content on .nav-link
+Make the orange underline (::after) match the text width instead of the whole link (including padding)
+
+6- z-index on ::after/::before independent on their parent
+If the pseudo-element cover the real content (like an icon), the fix is usually z-index: -1 
+on the pseudo-element itself not adjust the parent's z-index
+
+7- filter
+        brightness()	Control the element brightness
+        blur()	Add a blur effect
+        grayscale()	Convert to black and white
+        invert()	Invert the colors
+
+8-Sass mixin condition need the $ sign
+@if ($breakPoint == 350) 
+ forget the $ makes SCSS treat it as a string, so the condition always fails with no error********
+
+9-Nested selectors make us don't repeat parent context inside
+Writing nav .navbar-toggler again inside nav.navbar { } creates nav.navbar nav .navbar-toggler,
+ which match nothing in html*******
+
+10- Animation position pseudo-elements or spans need position, width/height, and background
+
+11-we must write mixin to responsive instead on typing on index.responsive .css
+
+12- responsive mixin 
+@mixin respond($breakPoint) {
+  @if ($breakPoint == 350) {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakPoint == 450) {
+    @media (min-width: 450px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakPoint == 650) {
+    @media (min-width: 577px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakPoint == 850) {
+    @media (min-width: 769px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakPoint == 1050) {
+    @media (min-width: 992px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if ($breakPoint == 1250) {
+    @media (min-width: 1200px) and (max-width: 1300px) {
+      @content;
+    }
+  }
+}
+
+14-NEW:
+inset in css
+take top, right, bottom, left in one line — only works with position: absolute, fixed, or sticky
+inset: 0 =
+top: 0; right: 0; bottom: 0; left: 0;
+take 1–4 values like margin/padding: inset: 10px 20px 30px 40px = top/right/bottom/left 
+supported in all browsers 
+
+15-we must type section instead of div (SEO)
+
+16-height: max-content on iframe because an iframe is a replaced element with no intrinsic content height.
+
+17-Add border: 0 to remove the default iframe border*********
+
+18-YouTube URL must use the /embed/ format, not watch?v=
+
+19- iframe to work i must use liveServer
+
+20-fadeIn() set display: block inline, which overrides the flex ***
+
+21-fadeIn only works on elements that already hidden
+
+22-Calling openVideo() once after the page loads is required, since define it does nothing
+
+23- Close on backdrop click with if (e.target === this) so click the video itself does not close it
+
+24-Font Awesome maybe replace <i> with <svg>, so i must check the selector with .length in the console
+
+25-position: fixed on the popup does not stop the page behind it from scrolling
+
+26- Use backdrop-filter: blur() on popup make background have blur(new)
+
+27-
+*/

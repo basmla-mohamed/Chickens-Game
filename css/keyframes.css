@@ -1,0 +1,170 @@
+/*sun*/
+@keyframes sun {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-10px, 8px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/*icon*/
+@keyframes icon {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*zoom chicken on loadingPage*/
+@keyframes chickenZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*loading page rotate*/
+@keyframes loadingRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*egg animation on loading page*/
+@keyframes eggAnimation {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+/*loading page dots*/
+@keyframes loadingDots {
+  0% {
+    content: "";
+  }
+
+  25% {
+    content: ".";
+  }
+
+  50% {
+    content: "..";
+  }
+
+  75%,
+  100% {
+    content: "...";
+  }
+}
+
+/*progress*/
+@keyframes loadingProgress {
+  0% {
+    width: 0;
+  }
+
+  70% {
+    width: 85%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/*startCounter*/
+@keyframes startCounter {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/*chickens animation*/
+@keyframes chickensAnimation {
+  from {
+    transform: translateY(-220px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*basket animation*/
+@keyframes basketAnimation {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*fade in to continue playing*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*pause animation*/
+@keyframes circleAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 133, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(251, 133, 0, 0);
+  }
+}
+
+/*continue popup*/
+@keyframes continuePopup {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

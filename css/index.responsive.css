@@ -1,0 +1,15 @@
+/*350*/
+@media (max-width: 1300px) {
+}
+/*450 */
+@media (min-width: 450px) and (max-width: 1300px) {
+}
+/*650*/
+@media (min-width: 577px) and (max-width: 1300px) {
+}
+/*850*/
+@media (min-width: 769px) and (max-width: 1300px) {
+}
+/*1050*/
+@media (min-width: 992px) and (max-width: 1300px) {
+}
