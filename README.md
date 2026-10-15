@@ -12,4 +12,4 @@ A browser arcade game: chickens drop eggs, and you move the basket with your mou
 JavaScript, jQuery, SCSS, Bootstrap
 
 ## Live Demo
-https://basmalamohamed248.github.io/chickenGame/
+https:/basmla-mohamed/.github.io/chickenGame/
